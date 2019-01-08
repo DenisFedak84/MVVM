@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/activity_detail_navigation"
+            app:startDestination="@id/detailFragment">
+
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.fedak.denis.mymvvm.fragment.DetailFragment"
+        android:label="DetailFragment" >
+
+        <action
+            android:id="@+id/action_detailFragment_to_detailImageFragment"
+            app:destination="@id/detailImageFragment" />
+
+        <action
+            android:id="@+id/action_detailFragment_to_detailTextFragment"
+            app:destination="@id/detailTextFragment" />
+        <argument android:name="urlArg" app:argType="string" android:defaultValue="default"/>
+        <argument android:name="textArg" app:argType="string" android:defaultValue="text"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/detailImageFragment"
+        android:name="com.fedak.denis.mymvvm.fragment.DetailImageFragment"
+        android:label="DetailImageFragment" >
+        <argument android:name="urlArg" app:argType="string" android:defaultValue="default"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/detailTextFragment"
+        android:name="com.fedak.denis.mymvvm.fragment.DetailTextFragment"
+        android:label="DetailTextFragment" >
+        <argument android:name="textArg" app:argType="string" android:defaultValue="default"/>
+    </fragment>
+
+    <fragment android:id="@+id/settings_dest"
+              android:name="com.fedak.denis.mymvvm.fragment.SettingFragment"
+              tools:layout="@layout/fragment_settings"
+              android:label="SettingFragment"/>
+
+    <fragment android:id="@+id/deep_link_dest"
+              android:name="com.fedak.denis.mymvvm.fragment.DeepLinkFragment"
+              android:label="DeepLinkFragment"
+              tools:layout="@layout/fragment_deeplink"
+    />
+
+
+</navigation>
